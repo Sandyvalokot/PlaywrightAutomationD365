@@ -19,15 +19,13 @@ export default defineConfig({
   reporter: 'html',
 
   /* Shared settings for all the projects below. */
-  use: {
-    // 👇 storageState will keep you logged in
-   // storageState: 'auth.json',
-    //trace: 'on-first-retry',
-    // Optional base URL if you want shorter page.goto() calls
-    baseURL: 'https://lmi-test.sandbox.operations.dynamics.com',
-    headless: false,
-    trace: 'on',
-  },
+ 
+use: {
+  baseURL: 'https://lmi-test.sandbox.operations.dynamics.com',
+  headless: process.env.CI ? true : false,
+  trace: 'on',
+}
+,
 
   /* Configure projects for major browsers */
   projects: [
