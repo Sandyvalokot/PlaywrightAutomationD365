@@ -16,8 +16,8 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   /* Reporter to use. */
-  reporter: 'html',
-
+ // reporter: 'html',
+ reporter: [['html', { open: 'always' }]], // always open report
   /* Shared settings for all the projects below. */
  
 use: {
@@ -42,4 +42,6 @@ use: {
 
   // 👇 add this line to run login once before all tests
   //globalSetup: require.resolve('./tests/global-setup'),
+
+  
 });
